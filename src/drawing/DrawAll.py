@@ -26,9 +26,9 @@ class DrawAll(QWidget):
         qp.setPen(Qt.blue)
 
         # 绘制弧
-        rect = QRect(0,10,100,100)
+        rect = QRect(0,10,100,100)  # 规定一个正方形区域, 在其中绘制弧
         # alen: 1个alen等于1/16度   45 * 16
-        qp.drawArc(rect,0, 50 * 16)
+        qp.drawArc(rect,0, 45 * 16)
         # 通过弧绘制圆
         qp.setPen(Qt.red)
         qp.drawArc(120,10,100,100,0, 360 * 16)
@@ -43,17 +43,17 @@ class DrawAll(QWidget):
         qp.drawEllipse(120,120,150,100)
 
         # 绘制5边形
+        # 通过制定点绘制
         point1 = QPoint(140,380)
         point2 = QPoint(270,420)
         point3 = QPoint(290,512)
         point4 = QPoint(290,588)
         point5 = QPoint(200,533)
-
         polygon = QPolygon([point1,point2,point3,point4,point5])
         qp.drawPolygon(polygon)
 
         # 绘制图像
-        image = QImage('./images/book1.png')
+        image = QImage('./images/book1.png')    # 装载图像
         rect = QRect(10, 400, image.width()/3, image.height()/3)
         #image.save('./images/book1.png')
         qp.drawImage(rect,image)

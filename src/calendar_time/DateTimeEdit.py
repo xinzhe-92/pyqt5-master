@@ -1,9 +1,8 @@
 '''
 输入各种风格的日期和时间
-
 QDateTimeEdit
-
 '''
+# 重要示例
 
 import sys,math
 from PyQt5.QtWidgets import *
@@ -14,12 +13,18 @@ class DateTimeEdit(QWidget):
     def __init__(self):
         super(DateTimeEdit, self).__init__()
         self.initUI()
+
     def initUI(self):
-        vlayout = QVBoxLayout()
+        vlayout = QVBoxLayout() # 垂直布局
+
         dateTimeEdit1 = QDateTimeEdit()
-        dateTimeEdit2 = QDateTimeEdit(QDateTime.currentDateTime())
+        # 设置最大/最小显示范围为前后一年
         dateTimeEdit1.setMinimumDate(QDate.currentDate().addDays(-365))
         dateTimeEdit1.setMaximumDate(QDate.currentDate().addDays(365))
+
+        # 初始化时可传入当前时间
+        dateTimeEdit2 = QDateTimeEdit(QDateTime.currentDateTime())
+
         self.dateTimeEdit = dateTimeEdit1
         dateTimeEdit2.setCalendarPopup(True)
 

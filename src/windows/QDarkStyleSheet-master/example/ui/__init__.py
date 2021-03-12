@@ -1,3 +1,3 @@
 """
-This package contains the qt designer files and ui scripts.
+This package contains the qt 2.designer files and ui scripts.
 """
